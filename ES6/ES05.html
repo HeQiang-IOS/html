@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>数组</title>
+		<script>
+			// map 映射 一个对一个
+			let arr = [12, 5, 8]
+			let result = arr.map(function(item){
+				return item * 2
+			})
+			let result2 = arr.map(item=>item*2)
+			let score = [18, 86, 88, 24]
+			let result3 = score.map(item=>item>=60?'及格':'不及格')
+			console.log(result3)
+			
+			// reduce 汇总 一堆出来一个 用于比如： 算个总数，算个平均
+			
+			// var arr = [1, 3, 5, 7]
+			var result4 = arr.reduce(function(tmp, item, index){
+				console.log(tmp, item, index)
+				return tmp + item
+			})
+			
+			console.log(result)
+			var result5 = arr.reduce(function(tmp, item, index){
+				if(index != arr.length-1){
+					return tmp + item
+				} else {
+					return (tmp + item)/ arr.length
+				}
+			})
+			
+			// filter 过滤器 保留为true的
+			var result6 = arr.filter(item=>(item%3 === 0))
+			
+			var arr2 = [
+				{title: 'pg', price: 10},
+				{title: 'xj', price: 20}
+			]
+			var result7 = arr2.filter(json=>json.price >= 20)
+			
+			// forEach 循环迭代
+			var arr3 = [12, 4, 8, 9]
+			var result8 = arr3.forEach(item=> console.log(item))
+			var result9 = arr3.forEach((item, index)=>console.log(index, item))
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

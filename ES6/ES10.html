@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>generator</title>
+		<script>
+			// 普通函数
+			function show(){
+				console.log("a");
+				console.log("b");
+			}
+			show()
+			// generator函数
+			function *show2(){
+				console.log("1");
+				var a = yield
+				console.log("2");
+				console.log(a)
+			}
+			
+			let genObj = show2()
+			genObj.next() // 1
+			genObj.next() // 2
+			genObj.next() // 最后了，没有结果
+			// yield 传参
+			let gen = show2()
+			gen.next(10) // 1 第一次执行到yield，但没有执行赋值
+			gen.next(20) // 2 和 20
+			// yield 返回
+			
+			function* show3() {
+			    console.log('1')
+			    yield 10
+			    console.log('2')
+			}
+			var gen = show2()
+			var res1 = gen.next()
+			console.log(res1) // { value: 10, done: false }
+			var res2 = gen.next()
+			console.log(res2)
+			// { value: undefined, done: true } 最后的value需要return返回
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

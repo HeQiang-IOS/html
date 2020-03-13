@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>变量</title>
+		<script>
+			window.onload = function(){
+				var aBtn = document.getElementsByTagName("input");
+				// for(var i=0; i< aBtn.length; i++){
+				// 	aBtn[i].onclick = function(){
+				// 		alert(i)
+				// 	}
+				// }
+				
+				for(var i=0; i< aBtn.length; i++){
+					(function(i){
+					aBtn[i].onclick = function(){
+						alert(i)
+					}
+					})(i)
+				}
+				
+				for(let i = 0; i < aBtn.length; i++){
+					aBtn[i].onclick = function () {
+						alert(i)
+					}
+				}
+				
+			
+				
+				
+			}
+		</script>
+			
+	</head>
+	<body>
+		<input type="button" value="按钮1" />
+		<input type="button" value="按钮2" />
+		<input type="button" value="按钮3" />
+	</body>
+</html>
