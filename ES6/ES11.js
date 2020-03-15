@@ -48,6 +48,7 @@ if (x === 1) {
 }
 
 export default 命令：
+export default ""
 从上面的例子来看，使用import命令的时候，用户需要知道所要加载的变量名或函数名，否则无法加载，为了方便快捷，就要用到export default命令，为模块指定默认输出，当其他模块加载该模块时，import命令可以为该匿名函数指定任意名字
 
 // export-default.js
