@@ -29,6 +29,7 @@ export default new Vuex.Store({
          Action函数接收一个与store实列具有相同方法和属性的context对象，因此我们可以使用 context.commit 提交一个
          mutation，或者通过 context.state 和 context.getters来获取state和getters
         */
+	   
   actions: { },
 })
 
