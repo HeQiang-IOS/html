@@ -1,4 +1,4 @@
-const baseUrl = "";
+const baseUrl = "www.baidu.com";
 
 	
 export const getInTheater = params => (
@@ -7,7 +7,8 @@ export const getInTheater = params => (
 			url:`${baseUrl}/v2`,
 			data:params,
 			header:{
-				'custom-header':'hello'
+				'custom-header':'hello',
+				'user-token':'',
 			},
 			success: (res) => {
 				resolve(res)

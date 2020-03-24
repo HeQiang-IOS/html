@@ -2,6 +2,7 @@ import Vue from 'vue'
 import App from './App'
 import store from './store'
 import Json from  './Json'
+import Api from './api'
 
 const msg = (title, duration=1500, mask=false, icon="none")=>{
 	
@@ -38,6 +39,7 @@ Vue.config.productionTip = false
 Vue.prototype.$fire = new Vue();
 Vue.prototype.$store = store;
 Vue.prototype.$api = {msg, json, prePage};
+Vue.prototype.$netApi = Api;
 
 
 App.mpType = 'app'

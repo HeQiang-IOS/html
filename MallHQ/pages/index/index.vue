@@ -259,6 +259,7 @@
 			 */
 			async loadData(){
 				let  carouselList = await this.$api.json('carouselList');
+				let  carouselList = await this.$netApi.getInTheater('carouselist');
 			this.titleNViewBackground = carouselList[0].background;
 			this.swiperLength = carouselList.length;
 			this.carouselList = carouselList;
