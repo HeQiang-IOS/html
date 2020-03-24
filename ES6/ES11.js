@@ -27,7 +27,7 @@ export {f};
 import 命令：
 使用export命令定义了模块的对外接口以后，其他 JS 文件就可以通过import命令加载这个模块。
 
- import {a} from './xxx.js' 
+import {a} from './xxx.js' 
 由于import是静态执行，所以不能使用表达式和变量这些只有在运行时才能得到结果的语法结构。
 import * as a from './xxx.js' 
 * 代表全部内容，as 代表别名
