@@ -1,0 +1,55 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "uni-app"
+			}
+		},
+		{
+			"path": "pages/singer/singerDetail",
+			"style": {
+				"navigationBarTitleText":"歌手详情"
+			}
+		},
+		{
+			"path":"pages/set/set",
+			"style":{
+				"navigationBarTitleText":"设置"
+			}
+		},
+		{
+			"path":"pages/public/login",
+			"style": {
+				"navigationBarTitleText":"登录"
+			}
+		}
+	],
+	
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar":{
+		"color":"#C0C4CC",
+		"selectedColor":"#fa436a",
+		"borderStyle":"black",
+		"backgroundColor":"#FFFFFF",
+		"list":[
+			{
+				"pagePath":"pages/index/index",
+				"selectedIconPath":"static/tab-home-current.png",
+				"iconPath":"static/tab-home.png",
+				"text":"首页"
+			},
+			{
+				"pagePath":"pages/set/set",
+				"iconPath":"static/tab-my.png",
+				"selectedIconPath":"static/tab-my-current.png",
+				"text":"设置"
+			}
+		]
+	}
+}
