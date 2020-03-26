@@ -16,7 +16,7 @@ device_type = 'wxapp'
 
 const baseUrl = 'https://douban.fm/j/v2/';
 
-function getToken(){
+function getToken() {
 	let tokentmp = '';
 	try {
 		tokentmp = uni.getStorageSync('token')
@@ -30,7 +30,7 @@ function getToken(){
 export const urlPath = {
 	index: 'artist/guess?limit=10&is_new_user=true',
 	singerDetail: 'artist/',
-	
+
 }
 
 export const networkAPI = params => {
@@ -40,14 +40,14 @@ export const networkAPI = params => {
 		// url: baseUrl + params.path,
 		url: "https://bs.xiaobaideng.com:81/rank/base/rank/hotList",
 		data: params.data,
-		method: (params.method == undefined || params.method == 'GET')? 'GET' : 'POST',
+		method: (params.method == undefined || params.method == 'GET') ? 'GET' : 'POST',
 		// header:{
 		// 	// 'Content-Type': 'application/x-www-form-urlencoded',
 		// 	// 'XX-Token': getToken(),
 		// 	// 'XX-Device-Type': device_type,
 		// 	'Access-Control-Allow-Origin':'*'
 		// }
-		
+
 		success: (res) => {
 			console.log(res);
 			params.success(res)
@@ -57,3 +57,32 @@ export const networkAPI = params => {
 		},
 	});
 }
+
+export const networkAPIM = params => {
+	console.log(params.method);
+	console.log(params.url);
+	return new Promise((resolve, reject) => {
+		uni.request({
+			// url: baseUrl + params.path,
+			url: "https://bs.xiaobaideng.com:81/rank/base/rank/hotList",
+			data: params.data,
+			method: (params.method == undefined || params.method == 'GET') ? 'GET' : 'POST',
+			// header:{
+			// 	// 'Content-Type': 'application/x-www-form-urlencoded',
+			// 	// 'XX-Token': getToken(),
+			// 	// 'XX-Device-Type': device_type,
+			// 	'Access-Control-Allow-Origin':'*'
+			// }
+
+			success: (res) => {
+				console.log(res);
+				resolve(res)
+			},
+			fail: (err) => {
+				reject(err);
+			},
+		});
+		console.log(222)
+	});
+}
+

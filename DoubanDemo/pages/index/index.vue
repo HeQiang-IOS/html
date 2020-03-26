@@ -27,6 +27,7 @@
 		},
 		onLoad() {
 			// this.loadData();
+			this.loadDataM();
 		},
 		methods: {
 		loadData(){
@@ -40,7 +41,12 @@
 					}
 			})
 			},
-		
+		loadDataM(){
+			let thend = this.$networkAPIM({
+				url: this.$urlPath.index,
+			});
+			console.log(thend);
+		},
 		
 		login(){
 			this.$refs.refempty.childMethod()
