@@ -6,12 +6,15 @@
 		</view>
 		<e-empty ref="refempty" setStr="/static/logo.png" @sonToFather="dd"></e-empty>
 		<button @click="login">button</button>
+		<uni-badge text="1"></uni-badge>
+		<uni-badge text="2" type="success" @click="bindClick"></uni-badge>
+		<uni-badge text="3" type="primary" :inverted="true"></uni-badge>
 	</view>
 </template>
 
 <script>
 	// import {networkAPI, urlPath} from '../../api'
-	import empty from '../../commponents/empty.vue'
+	import empty from '../../components/empty.vue'
 	export default {
 		data() {
 			return {
@@ -51,7 +54,7 @@
 	}
 </script>
 
-<style>
+<style lang="scss">
 	.content {
 		display: flex;
 		flex-direction: column;
@@ -77,4 +80,26 @@
 		font-size: 36rpx;
 		color: #8f8f94;
 	}
+	
+	$primary-color: #333;
+	
+	body{
+		color: $primary-color;
+	}
+	
+	nav{
+		ul{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		ls {
+			display: inline-block;
+		}
+		a {
+			display: block;
+		}
+	}
+	
+	
 </style>

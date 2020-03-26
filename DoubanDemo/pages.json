@@ -12,18 +12,37 @@
 				"navigationBarTitleText":"歌手详情"
 			}
 		},
+		// #ifdef APP-PLUS || MP-WEIXIN || MP-QQ || H5
 		{
 			"path":"pages/set/set",
 			"style":{
-				"navigationBarTitleText":"设置"
+				"navigationBarTitleText":"设置",
+				"usingComponents":{
+					"van-button": "/wxcomponents/vant/button/index"
+				}
 			}
 		},
+		// #endif
 		{
 			"path":"pages/public/login",
 			"style": {
 				"navigationBarTitleText":"登录"
 			}
+		},
+		{
+			"path":"platforms/app-plus/push",
+			"style":{
+				"navigationBarTitleText":"推送"
+			}
+		},
+		// #ifndef MP-WEIXIN
+		{
+			"path":"pages/web-view/web-view",
+			"style":{
+				"navigationBarTitleText":"本地网页"
+			}
 		}
+		// #endif
 	],
 	
 	"globalStyle": {
@@ -44,6 +63,14 @@
 				"iconPath":"static/tab-home.png",
 				"text":"首页"
 			},
+			// #ifndef MP-WEIXIN
+			{
+				"pagePath":"pages/web-view/web-view",
+				"iconPath":"static/tab-my.png",
+				"selectedIconPath":"static/tab-my-current.png",
+				"text":"网页"
+			},	
+			// #endif
 			{
 				"pagePath":"pages/set/set",
 				"iconPath":"static/tab-my.png",
