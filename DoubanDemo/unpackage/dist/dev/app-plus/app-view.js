@@ -3243,7 +3243,7 @@ var render = function() {
     { attrs: { _i: 0 } },
     [
       _c("v-uni-web-view", {
-        attrs: { src: "/hybrid/html/index.html", _i: 1 },
+        attrs: { src: "/hybrid/html/demo.html", _i: 1 },
         on: {
           message: function($event) {
             return _vm.$handleViewEvent($event)
