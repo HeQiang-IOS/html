@@ -19,7 +19,9 @@
         /* 模块配置 */
         "modules" : {
             "OAuth" : {},
-            "Payment" : {}
+            "Payment" : {},
+            "FaceID" : {},
+            "Fingerprint" : {}
         },
         /* 应用发布信息 */
         "distribute" : {
@@ -45,6 +47,7 @@
                     "<uses-permission android:name=\"android.permission.READ_LOGS\"/>",
                     "<uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/>",
                     "<uses-permission android:name=\"android.permission.RECORD_AUDIO\"/>",
+                    "<uses-permission android:name=\"android.permission.USE_FINGERPRINT\"/>",
                     "<uses-permission android:name=\"android.permission.VIBRATE\"/>",
                     "<uses-permission android:name=\"android.permission.WAKE_LOCK\"/>",
                     "<uses-permission android:name=\"android.permission.WRITE_CONTACTS\"/>",
@@ -53,7 +56,11 @@
                 ]
             },
             /* ios打包配置 */
-            "ios" : {},
+            "ios" : {
+                "privacyDescription" : {
+                    "NSFaceIDUsageDescription" : "方便登录"
+                }
+            },
             /* SDK配置 */
             "sdkConfigs" : {
                 "oauth" : {

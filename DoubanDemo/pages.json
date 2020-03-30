@@ -72,7 +72,7 @@
 			},	
 			// #endif
 			{
-				"pagePath":"pages/public/login",
+				"pagePath":"pages/singer/singerDetail",
 				"iconPath":"static/tab-my.png",
 				"selectedIconPath":"static/tab-my-current.png",
 				"text":"设置"
