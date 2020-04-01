@@ -20,7 +20,9 @@
 // import {networkAPI, urlPath} from '../../api'
 import empty from '../../components/empty.vue';
 
-import py from '../../common/py.js'
+import py from '../../common/py.js';
+
+import Pinyin from '../../common/pinyin.js'
 export default {
 	data() {
 		return {
@@ -36,8 +38,21 @@ export default {
 		// this.loadData();
 		// this.loadDataM();
 		this.isShowAppleLogin();
-		console.log(py.getFullChars("张三"));
-		console.log(py.getFullChars("撒贝宁"));
+		console.log(py.getFullChars("促"));
+		// console.log(py.getFullChars("撒贝宁"));
+		
+		
+		let pinyin = new Pinyin();
+		pinyin.setOptions({checkPolyphone: false, charCase: 0})
+		// console.log(new Pinyin());
+		console.log(pinyin);
+	
+		// console.log(pinyin.setOptions())
+		console.log(pinyin.getCamelChars('管理员'));
+		console.log(pinyin.getCamelChars('1234'));
+		console.log(pinyin.getCamelChars('english'));
+		console.log(pinyin.getFullChars('司马光'));
+		console.log(pinyin.getFullChars('促销'))
 	},
 	methods: {
 		loadData() {
