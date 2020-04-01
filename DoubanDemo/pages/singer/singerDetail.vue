@@ -19,15 +19,21 @@
         },
         methods: {
             checkIsSupportSoterAuthentication() {
+				const that = this;
                 uni.checkIsSupportSoterAuthentication({
                     success(res) {
-                        console.log(res);
+                        console.log(res.supportMode);
+						if(res.supportMode.indexOf('fingerPrint') != -1) {
+							console.log(1)
+							that.checkIsSoterEnrolledInDeviceFingerPrint()
+						}
                     },
                     fail(err) {
                         console.log(err);
                     },
                     complete(res) {
                         console.log(res);
+						console.log(res.supportMode);
                     }
                 })
             },

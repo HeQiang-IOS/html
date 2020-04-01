@@ -108,6 +108,16 @@ export default {
 				provider: 'weixin',
 				success: function(data) {
 					console.log(data);
+					uni.getUserInfo({
+						provider: 'weixin',
+						success(data) {
+							console.log(data);
+							// uni.showToast({
+							// 	title:"先给我不犯法",
+							// 	duration:2000
+							// })
+						}
+					});
 				},
 				fail: function(err) {
 					console.log(err);
