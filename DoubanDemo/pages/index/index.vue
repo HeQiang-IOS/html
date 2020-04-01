@@ -19,6 +19,8 @@
 <script>
 // import {networkAPI, urlPath} from '../../api'
 import empty from '../../components/empty.vue';
+
+import py from '../../common/py.js'
 export default {
 	data() {
 		return {
@@ -34,6 +36,8 @@ export default {
 		// this.loadData();
 		// this.loadDataM();
 		this.isShowAppleLogin();
+		console.log(py.getFullChars("张三"));
+		console.log(py.getFullChars("撒贝宁"));
 	},
 	methods: {
 		loadData() {
